@@ -1,0 +1,17 @@
+[project]
+name = "stumble"
+version = "0.1.0"
+description = "Fast, private, local document search for .txt & .md notes. TF-IDF retrieval, 100% on-device."
+readme = "README.md"
+authors = [
+    { name = "nintagaise", email = "212206250+AgentCasin@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+stumble = "stumble:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"

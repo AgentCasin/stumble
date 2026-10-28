@@ -1,0 +1,41 @@
+Lecture 5: Game Trees and Minimax
+=================================
+
+Adversarial search: making decisions when an opponent is working
+against you. Chess, checkers, and tic-tac-toe are all two-player,
+zero-sum games.
+
+The Game Tree
+-------------
+The current board position is the root. Each branch is a legal move.
+Each leaf is a possible future position. The number of positions
+explodes as we look further ahead, so we always search to a fixed
+depth and evaluate the positions at the bottom.
+
+Minimax
+-------
+Minimax assumes both players always make their best move.
+The maximizer (us) picks the branch with the highest score.
+The minimizer (the opponent) picks the branch with the lowest score.
+Scores are passed up from the leaves to the root, and we play the
+move that leads to the best worst-case outcome.
+
+Evaluation Function
+-------------------
+At the bottom of the tree we need a number for each position.
+A simple evaluation: count material. Pawn = 1, knight = 3,
+bishop = 3, rook = 5, queen = 9. Our material minus theirs.
+
+Alpha-Beta Pruning
+------------------
+Pruning skips branches that cannot change the final decision.
+If one move already guarantees a score of +2 and another reply
+by the opponent limits us to +1, the rest of that subtree is
+irrelevant and can be ignored. The result: the same move as
+plain minimax, but roughly twice the search depth in the same time.
+
+Summary
+-------
+- Minimax: optimal play against a perfect opponent
+- Evaluation functions turn positions into numbers
+- Alpha-beta pruning: same answer, much faster
