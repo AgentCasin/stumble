@@ -1,0 +1,4 @@
+{
+  "route": ["path", "way"],
+  "best": ["shortest", "optimal"]
+}

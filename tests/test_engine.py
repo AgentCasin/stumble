@@ -163,3 +163,30 @@ def test_synonym_expansion_deduplicates_matches(
 
     assert len(results) == 1
     assert results[0].score == 1.0
+
+
+def test_synonym_file_changes_document_ranking(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    """Verify that configured synonyms can change which document ranks first."""
+    monkeypatch.chdir(tmp_path)
+    corpus = [
+        Document("a_route.txt", "route"),
+        Document("z_path.txt", "path"),
+    ]
+
+    without_synonyms = SearchEngine(corpus).search("path")
+
+    data_directory = tmp_path / "data"
+    data_directory.mkdir()
+    (data_directory / "synonyms.json").write_text(
+        json.dumps({"route": ["path", "way"], "best": ["shortest", "optimal"]}),
+        encoding="utf-8",
+    )
+    with_synonyms = SearchEngine(corpus).search("path")
+
+    assert [result.filename for result in without_synonyms] == ["z_path.txt"]
+    assert [result.filename for result in with_synonyms] == [
+        "a_route.txt",
+        "z_path.txt",
+    ]
