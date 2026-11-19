@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "corpus": "data/sample",
+  "top_k_reported": [
+    1
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "query": "when is a search guaranteed to give the best route",
+      "expected_file": "lecture3_pathfinding.md",
+      "also_acceptable": [],
+      "author": "AI-generated sample"
+    },
+    {
+      "id": 2,
+      "query": "how do you make a computer pick good chess moves",
+      "expected_file": "lecture5_minimax.txt",
+      "also_acceptable": [],
+      "author": "AI-generated sample"
+    },
+    {
+      "id": 3,
+      "query": "what makes one search smarter than another",
+      "expected_file": "lecture3_pathfinding.md",
+      "also_acceptable": [
+        "lecture5_minimax.txt"
+      ],
+      "author": "AI-generated sample"
+    },
+    {
+      "id": 4,
+      "query": "difference between finding stored info and deriving new facts",
+      "expected_file": "lecture7_knowledge.txt",
+      "also_acceptable": [],
+      "author": "AI-generated sample"
+    },
+    {
+      "id": 5,
+      "query": "why does the engine check twice as far ahead",
+      "expected_file": "lecture5_minimax.txt",
+      "also_acceptable": [],
+      "author": "AI-generated sample"
+    }
+  ]
+}

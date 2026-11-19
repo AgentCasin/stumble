@@ -1,0 +1,27 @@
+Lecture 7: Knowledge Representation
+===================================
+
+How do we store what a program "knows" so it can reason with it?
+
+Fact-based Representation
+-------------------------
+The simplest approach: facts as simple statements.
+"is_a(sparrow, bird)", "can_fly(bird)". New facts can follow
+from old ones: if a sparrow is a bird and birds can fly,
+a sparrow can fly. This chaining of facts is called inference.
+
+Retrieval vs Reasoning
+----------------------
+Two different problems: FINDING the stored information that
+matches a question (retrieval), and DERIVING new information
+from stored facts (reasoning). Modern search engines are
+retrieval systems. Expert systems in the 1980s tried
+reasoning and struggled with scale.
+
+Databases vs Documents
+----------------------
+Structured data (tables, key-value pairs) answers precise
+queries efficiently. Unstructured text (notes, articles)
+requires ranking methods like TF-IDF to decide which document
+is most relevant to a query. Weighting terms by how rare they
+are across a collection turns text search into scoring.
